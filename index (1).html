@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alerta IDP · Guía sobre inmunodeficiencias primarias</title>
+<style>
+:root{--bg:#f1f6f6;--sf:#fff;--tx:#0f2830;--mu:#4e6870;--pr:#0e6f78;--pr2:#dcecee;--am:#b45309;--am2:#fdf0d5;--bd:#cddcde;--hd:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a191e;--sf:#112329;--tx:#e5f0f1;--mu:#9ab6bb;--pr:#5cc5cc;--pr2:#16343a;--am:#f5b94e;--am2:#33270f;--bd:#26434a;--hd:#0d1f25;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a191e;--sf:#112329;--tx:#e5f0f1;--mu:#9ab6bb;--pr:#5cc5cc;--pr2:#16343a;--am:#f5b94e;--am2:#33270f;--bd:#26434a;--hd:#0d1f25;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font:1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--hd)}
+h1,h2,h3{font-family:"Iowan Old Style",Palatino,Georgia,serif;line-height:1.2;margin:0 0 .5rem}
+h2{font-size:1.6rem}h3{font-size:1.15rem;margin-top:1.6rem}
+a{color:var(--pr)}
+:focus-visible{outline:3px solid var(--am);outline-offset:2px}
+.sk{position:absolute;left:-999px}.sk:focus{left:8px;top:8px;background:var(--sf);padding:.5rem;z-index:20}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--hd);border-bottom:1px solid var(--bd)}
+.ab{background:var(--am2);color:var(--tx);font-size:.8rem;padding:.35rem 1rem;line-height:1.4}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:.3rem 1rem}
+.lg{font-family:Georgia,serif;font-size:1.15rem}
+.ut button{min-width:44px;min-height:44px;margin-left:.2rem;border:1px solid var(--bd);background:var(--sf);color:var(--tx);border-radius:8px;font:inherit;cursor:pointer}
+nav{display:flex;overflow-x:auto;padding:0 .5rem}
+nav a{flex:none;min-height:44px;display:flex;align-items:center;padding:0 .8rem;color:var(--mu);text-decoration:none;border-bottom:3px solid transparent}
+nav a[aria-current=page]{color:var(--tx);border-color:var(--am);font-weight:600}
+main{max-width:860px;margin:0 auto;padding:1.2rem 1rem 2rem}
+.hero{background:repeating-linear-gradient(135deg,#0e2a33 0 16px,#123642 16px 32px);color:#eef7f7;border-radius:14px;padding:2rem 1.4rem;margin-bottom:1.4rem}
+.hero h1{font-size:clamp(1.8rem,6vw,2.6rem);max-width:18ch}
+.hero p{max-width:52ch;margin:.5rem 0 0;color:#cfe3e5}
+.pf{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:1rem 0}
+.pf button{min-height:56px;text-align:left;padding:.6rem .9rem;border:2px solid var(--bd);background:var(--sf);color:var(--tx);border-radius:10px;font:inherit;cursor:pointer}
+.pf button[aria-pressed=true]{border-color:var(--pr);background:var(--pr2)}
+.pf small{display:block;color:var(--mu)}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;margin:0 .5rem .5rem 0;background:var(--pr);color:var(--sf);border:0;border-radius:8px;text-decoration:none;font:inherit;cursor:pointer}
+.facts{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1.2rem 0;padding:0;list-style:none}
+.facts b{display:block;font:700 1.6rem Georgia,serif;color:var(--pr)}
+.facts span{font-size:.85rem;color:var(--mu)}
+.gz{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin:1rem 0 .4rem}
+.gz i{height:14px;border-radius:3px;background:var(--bd)}
+.gz i:nth-child(2){margin-right:8px}
+.gz i.on{background:var(--pr)}.gz.hit i.on{background:var(--am)}
+#ck label{display:flex;gap:.7rem;align-items:flex-start;min-height:44px;padding:.55rem 0;border-bottom:1px solid var(--bd);cursor:pointer}
+#ck input{width:22px;height:22px;margin-top:.15rem;flex:none;accent-color:var(--pr)}
+#rs{background:var(--sf);border-left:5px solid var(--pr);padding:.8rem 1rem;margin:.6rem 0}
+.hit~#rs{border-color:var(--am);background:var(--am2)}
+#rs ul{margin:.4rem 0 0;padding-left:1.2rem}
+.box{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:.9rem 1rem;margin:1rem 0}
+.box.al{border-color:var(--am);background:var(--am2)}
+details{background:var(--sf);border:1px solid var(--bd);border-radius:10px;margin:.5rem 0}
+summary{min-height:44px;padding:.7rem 1rem;cursor:pointer;font-weight:600;font-family:Georgia,serif;font-size:1.05rem}
+details .b{padding:0 1rem .6rem}details .b p{margin:.45rem 0}
+.rf{border-left:4px solid var(--am);padding-left:.7rem}
+input[type=search]{width:100%;min-height:48px;padding:0 .9rem;border:2px solid var(--bd);border-radius:10px;background:var(--sf);color:var(--tx);font:inherit}
+.st{counter-reset:s;padding:0;list-style:none}
+.st li{counter-increment:s;position:relative;padding:0 0 1.1rem 3rem;border-left:2px solid var(--bd);margin-left:1rem}
+.st li::before{content:counter(s);position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;background:var(--pr);color:var(--sf);display:grid;place-items:center;font-weight:700}
+dl{margin:0}dt{font:700 1.1rem Georgia,serif;margin-top:1.1rem}dd{margin:.2rem 0 0}
+a.r{display:block;padding:.7rem 0;border-bottom:1px solid var(--bd);text-decoration:none;color:var(--tx)}
+a.r b{color:var(--pr);text-decoration:underline}
+a.r span{display:block;color:var(--mu);font-size:.92rem}
+em.l{font-style:normal;font-size:.72rem;border:1px solid var(--mu);border-radius:4px;padding:0 .3rem;margin-left:.4rem;color:var(--mu)}
+body:not([data-p]) [data-a],body:not([data-p]) nav{display:none}
+body[data-p=medico] [data-a]:not([data-a~=m]){display:none}
+body[data-p=estudiante] [data-a]:not([data-a~=e]){display:none}
+body[data-p=familia] [data-a]:not([data-a~=f]){display:none}
+table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{text-align:left;padding:.5rem;border-bottom:1px solid var(--bd);vertical-align:top}th{font-family:Georgia,serif}
+.gl dt{font:700 1rem system-ui,sans-serif;color:var(--pr);margin-top:.9rem}
+footer{max-width:860px;margin:0 auto;padding:1rem;font-size:.85rem;color:var(--mu);border-top:1px solid var(--bd)}
+@media(prefers-reduced-motion:no-preference){summary{transition:background .2s}details[open]>summary{background:var(--pr2)}}
+@media print{header,footer,.np,nav{display:none!important}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<a class="sk" href="#main">Saltar al contenido</a>
+<header>
+<div class="ab" role="note">Herramienta educativa: no diagnostica ni sustituye la valoración médica. Ante fiebre alta, dificultad para respirar o decaimiento importante, acude a urgencias o llama al 911.</div>
+<div class="bar"><b class="lg">🦓 Alerta IDP</b><span class="ut"><button id="fm" aria-label="Reducir tamaño de texto">A−</button><button id="fp" aria-label="Aumentar tamaño de texto">A+</button><button id="th" aria-label="Cambiar entre tema claro y oscuro">◐</button></span></div>
+<nav id="nv" aria-label="Secciones"></nav>
+</header>
+<main id="main">
+
+<section class="tab" id="t-inicio">
+<div class="hero"><h1>Las infecciones que no se van también son una señal</h1><p>Guía para sospechar, orientar y derivar en inmunodeficiencias primarias (errores innatos de la inmunidad), pensada para médicos, estudiantes y familias.</p></div>
+<h2>¿Quién eres?</h2>
+<div class="pf" role="group" aria-label="Perfil">
+<button data-p="medico" aria-pressed="false">Médico/a general<small>Banderas clínicas y cuándo referir</small></button>
+<button data-p="estudiante" aria-pressed="false">Estudiante de medicina<small>Clasificación y pistas de laboratorio</small></button>
+<button data-p="familia" aria-pressed="false">Familiar de un paciente<small>Señales, tratamiento y apoyo</small></button>
+</div>
+<div id="ql"><p style="color:var(--mu)">Elige un perfil para abrir su contenido. Cada perfil ve solo el material pensado para él, y puedes cambiar de perfil cuando quieras.</p></div>
+<ul class="facts"><li><b>+550</b><span>inmunodeficiencias primarias conocidas (IDF)</span></li><li><b>2 o más</b><span>señales de alerta: consultar a inmunología (JMF)</span></li><li><b>1 de 80,000</b><span>nacimientos con IDCG, la forma más grave (Fumeni)</span></li></ul>
+</section>
+
+<section class="tab" id="t-senales" data-a="m e f" hidden>
+<h2>Señales de alerta</h2>
+<p>Marca lo que haya ocurrido. Lista pediátrica de la Jeffrey Modell Foundation, desarrollada con la Cruz Roja Americana y actualizada periódicamente.</p>
+<p data-a="f">En palabras simples: si marcas dos o más, pide al médico de tu hija o hijo una valoración con inmunología. No significa que tenga una IDP; significa que vale la pena revisarlo.</p>
+<div id="gz" class="gz" aria-hidden="true"></div>
+<div id="rs" role="status" aria-live="polite"></div>
+<div id="ck" role="group" aria-label="Las 10 señales de alerta"></div>
+<p class="np"><button class="btn" onclick="window.print()">Imprimir resumen para la consulta</button></p>
+<div class="box" data-a="m e"><b>Banderas por cuadro clínico (Fumeni)</b>
+<ul><li>Lactante menor de 6 meses con infecciones graves, oportunistas o falla de crecimiento: pensar en inmunodeficiencia combinada grave.</li><li>Caída del cordón umbilical después de 15 días, heridas sin pus: déficit de adhesión leucocitaria.</li><li>Inflamación o adenitis por BCG, o BCG diseminada: enfermedad granulomatosa crónica o defecto del eje IL-12/IFN-γ.</li><li>Eccema difícil de tratar con sangrado y plaquetas bajas y pequeñas: Wiskott-Aldrich.</li><li>Fiebre cada 15-30 días sin causa, con aftas o dolor articular: trastorno autoinflamatorio.</li></ul></div>
+<p data-a="m f">Más: <a href="https://fumeni.org.mx/senales-de-alerta/" target="_blank" rel="noopener noreferrer">infografía de Fumeni</a> y <a href="https://www.info4pi.org/information-booth/10-warning-signs/" target="_blank" rel="noopener noreferrer">versión para adultos y carteles de JMF</a>.</p>
+</section>
+
+<section class="tab" id="t-tipos" data-a="m e f" hidden>
+<h2>Tipos de inmunodeficiencia</h2>
+<p>Fuente: Fumeni. Busca un hallazgo (por ejemplo: cordón, BCG, eccema, ferritina, aftas) y verás qué grupos lo mencionan. Ante sospecha de cualquiera de ellos, deriva a inmunología.</p>
+<label for="q" class="np" style="display:block;margin:.8rem 0 .3rem">Buscar por hallazgo o nombre</label>
+<input type="search" id="q" autocomplete="off"><p id="qc" role="status" style="color:var(--mu);margin:.3rem 0"></p>
+<div id="lt"></div>
+</section>
+
+<section class="tab" id="t-diagnostico" data-a="m e f" hidden>
+<h2>Ruta diagnóstica</h2>
+<p>Resumen de Fumeni e IDF. El orden va de lo más accesible a lo más especializado.</p>
+<ol class="st">
+<li><b>Sospecha clínica.</b> Historia, familiares afectados y exploración de piel, mucosas, ganglios, hígado y bazo. Dos o más señales de alerta ya justifican seguir.</li>
+<li data-a="m e"><b>Estudios de primer nivel.</b> Biometría hemática con diferencial e inmunoglobulinas séricas (IgG, IgA, IgM). IgE si hay eccema grave.</li>
+<li data-a="m e"><b>Estudios de segundo nivel.</b> Subpoblaciones linfocitarias, respuesta a vacunas (proteínas y polisacáridos), C3 y C4, alfafetoproteína en sospecha de ataxia-telangiectasia. Las pruebas funcionales de fagocitos se hacen en centros especializados.</li>
+<li><b>Referencia a inmunología.</b> Con hallazgos anormales o sospecha clínica fuerte, no esperes a completar todos los estudios.</li>
+<li><b>Pruebas genéticas.</b> Algunas IDP solo se confirman así, y el resultado ayuda a que la familia conozca su riesgo.</li>
+</ol>
+<div class="box"><b>Tamizaje neonatal.</b> Algunas condiciones, incluida la IDCG, pueden detectarse al nacer y tratarse antes de que aparezcan infecciones que ponen en riesgo la vida (IDF).</div>
+</section>
+
+<section class="tab" id="t-tratamiento" data-a="m e f" hidden>
+<h2>Tratamiento</h2>
+<p>El tratamiento depende del tipo de IDP. Estos son los cuatro pilares descritos por IDF y Fumeni; las decisiones y los esquemas los define el inmunólogo.</p>
+<dl>
+<dt>Profilaxis antimicrobiana</dt><dd>Antibióticos u otros antimicrobianos para prevenir infecciones, no solo para tratarlas. Sirve en muchos tipos de IDP.</dd>
+<dt>Inmunoglobulina intravenosa o subcutánea</dt><dd>Aporta anticuerpos obtenidos de miles de donadores sanos a quienes no los producen o los producen sin función adecuada.</dd>
+<dt>Trasplante de progenitores hematopoyéticos</dt><dd>Médula ósea o células madre sanas de un donador. Es el tratamiento curativo en inmunodeficiencias combinadas y de disregulación inmune, y se considera cuando la IDP puede causar daño grave o la muerte.</dd>
+<dt>Terapia génica</dt><dd>En ensayos clínicos para varios tipos de IDP, como alternativa cuando no hay donador. Fumeni colabora en la creación de la primera Unidad de Terapia Génica en México.</dd>
+</dl>
+<div class="box al" data-a="m e"><b>Precauciones que menciona Fumeni</b>
+<ul><li>En inmunodeficiencia combinada grave: no aplicar vacunas con microorganismos vivos (BCG, varicela) y usar hemoderivados irradiados.</li><li>En ataxia-telangiectasia: evitar la radiación.</li><li>Tratar las infecciones de forma pronta y enérgica.</li></ul></div>
+</section>
+
+<section class="tab" id="t-estudio" data-a="e" hidden>
+<h2>Estudio y glosario</h2>
+<p>Lo más útil de Fumeni, JMF e IDF para el pregrado, reunido aquí para que no tengas que salir de la página.</p>
+<h3>Lo esencial</h3>
+<ul>
+<li>Las IDP (errores innatos de la inmunidad) suman más de 550 entidades. Fumeni las presenta en ocho grupos y la clasificación internacional IUIS se actualiza periódicamente.</li>
+<li>Criterio práctico de JMF: dos o más de las 10 señales de alerta justifican valoración por inmunología.</li>
+<li>El tamizaje neonatal permite detectar IDCG al nacer y tratar antes de las infecciones graves.</li>
+<li>Pilares del tratamiento: profilaxis antimicrobiana, inmunoglobulina, trasplante de progenitores y terapia génica en ensayos clínicos.</li>
+<li>En IDCG: sin vacunas vivas (BCG, varicela) y con hemoderivados irradiados.</li>
+</ul>
+<h3>Repaso rápido: hallazgo y qué pensar</h3>
+<div style="overflow-x:auto"><table><thead><tr><th scope="col">Hallazgo</th><th scope="col">Pensar en</th></tr></thead><tbody>
+<tr><td>Infecciones graves u oportunistas antes de los 6 meses, linfopenia</td><td>IDCG</td></tr>
+<tr><td>Caída del cordón después de 15 días, heridas sin pus</td><td>Déficit de adhesión leucocitaria</td></tr>
+<tr><td>BCGitis o BCG diseminada</td><td>EGC o defecto del eje IL-12/IFN-γ</td></tr>
+<tr><td>Eccema, sangrado, plaquetas bajas y pequeñas</td><td>Wiskott-Aldrich</td></tr>
+<tr><td>Cardiopatía, hipocalcemia con convulsiones, paladar hendido</td><td>DiGeorge</td></tr>
+<tr><td>Ataxia, telangiectasias, alfafetoproteína alta después de los 2 años</td><td>Ataxia-telangiectasia</td></tr>
+<tr><td>Eccema grave, neumonías, abscesos, IgE muy alta</td><td>Hiper IgE</td></tr>
+<tr><td>Varón con infecciones sinopulmonares después de los 6-8 meses</td><td>Bruton</td></tr>
+<tr><td>Inmunoglobulinas normales y mala respuesta a polisacáridos</td><td>Deficiencia específica de anticuerpos</td></tr>
+<tr><td>Neutropenia cada ~21 días con úlceras orales</td><td>Neutropenia cíclica</td></tr>
+<tr><td>Fiebre, organomegalia, ferritina y triglicéridos muy altos</td><td>Disregulación inmune</td></tr>
+<tr><td>Fiebre cada 15-30 días sin causa</td><td>Trastorno autoinflamatorio</td></tr>
+<tr><td>Neumococo o meningococo graves, autoinmunidad tipo lupus</td><td>Deficiencia de complemento (C3, C4)</td></tr>
+</tbody></table></div>
+<h3>Glosario</h3>
+<label for="gq" class="np" style="display:block;margin:.5rem 0 .3rem">Buscar un término</label><input type="search" id="gq" autocomplete="off">
+<dl class="gl" id="ge"></dl>
+</section>
+
+<section class="tab" id="t-familias" data-a="f" hidden>
+<h2>Familias y comunidad</h2>
+<p>Foros, grupos y orientación. Las etiquetas ES y EN indican el idioma. Revisa siempre los horarios y requisitos en la fuente oficial.</p>
+<div id="cf"></div>
+<div class="box"><b>Preguntas para tu inmunólogo (IDF)</b>
+<ul><li>¿Atiende mi seguro o cobertura?</li><li>¿Trata la inmunodeficiencia específica de mi hijo o hija?</li><li>¿Cuántos pacientes con IDP atiende en este servicio?</li><li>Si recibe inmunoglobulina: ¿la prescribe intravenosa y subcutánea? ¿Hay más de una marca? ¿Se puede aplicar en casa?</li></ul></div>
+</section>
+
+<section class="tab" id="t-recursos" data-a="m" hidden>
+<h2>Recursos y eventos</h2>
+<p>Biblioteca clínica, directorios, becas y congresos. Los directorios son listados voluntarios: no son una referencia y no están verificados; evalúa el servicio y tu cobertura.</p>
+<div id="cr"></div>
+</section>
+
+</main>
+<footer>
+<p><b>Fuentes:</b> Fumeni, Jeffrey Modell Foundation e Immune Deficiency Foundation. Última consulta: 23 de octubre de 2026. Texto redactado con palabras propias; consulta cada fuente para el contenido completo.</p>
+<p><b>Aviso médico:</b> esta herramienta es educativa. No diagnostica, no indica dosis y no sustituye a un profesional de la salud.</p>
+<p><b>Privacidad:</b> no recopila ni envía datos personales. Solo guarda tu tema y tamaño de texto en este navegador.</p>
+<p><b>Contenido pendiente de revisión médica.</b> El material clínico de Fumeni se actualizó por última vez en 2021; contrástalo con la clasificación IUIS vigente.</p>
+</footer>
+<script>
+const D={
+t:[
+['Inmunodeficiencias combinadas','IDCG (~1 de 80,000 nacimientos), síndrome de Omenn.','Infecciones graves desde las primeras semanas (neumonía, diarrea, sepsis), gérmenes oportunistas (Pneumocystis, Candida), hongos y bacterias en piel, mal crecimiento y poco peso.','Linfopenia en la biometría; subpoblaciones linfocitarias; IgG, IgA e IgM bajas.','Trasplante de progenitores; a veces inmunoglobulina sustitutiva. Mientras se busca donador: protegerse de infecciones, sin vacunas vivas (BCG, varicela) y con hemoderivados irradiados.','Infecciones graves antes de los 6 meses que no responden al tratamiento convencional, o aislamiento de oportunistas.'],
+['Combinadas con rasgos sindrómicos','DiGeorge, ataxia-telangiectasia, Wiskott-Aldrich, Hiper IgE.','DiGeorge: cardiopatía (p. ej. tetralogía de Fallot), convulsiones por hipocalcemia, paladar hendido. Ataxia-telangiectasia: marcha atáxica y telangiectasias en esclera y piel. Wiskott-Aldrich: eccema difícil de tratar, sangrado y moretones. Hiper IgE: eccema grave, neumonías y abscesos.','Biometría e inmunoglobulinas primero. DiGeorge: pocos linfocitos T, timo pequeño o ausente. Ataxia-telangiectasia: alfafetoproteína alta después de los 2 años, IgA e IgG bajas. Wiskott-Aldrich: plaquetas bajas y pequeñas, IgM baja, IgA e IgE altas. Hiper IgE: IgE muy elevada.','Prevención de infecciones, inmunoglobulina sustitutiva y, como tratamiento curativo, trasplante de médula ósea.'],
+['Defectos predominantes de anticuerpos','Hipogammaglobulinemia transitoria de la infancia, IgA selectiva (~1 de 500), Bruton, IDCV, deficiencia específica de anticuerpos.','Otitis, sinusitis, neumonías y diarrea recurrentes. Bruton: varones, después de los 6-8 meses. IDCV: niños y adultos, con riesgo de autoinmunidad y cáncer. IgA selectiva: suele no dar síntomas.','Inmunoglobulinas séricas, respuesta a vacunas (proteínas y polisacáridos, p. ej. neumococo 23-valente) y linfocitos B circulantes.','Desde antibiótico oportuno y vigilancia (IgA selectiva) hasta profilaxis e inmunoglobulina G intravenosa o subcutánea.'],
+['Disregulación inmune','Síndromes linfoproliferativos, Griscelli tipo 2, Hermansky-Pudlak, Chediak-Higashi.','Fiebre con infecciones recurrentes, crecimiento de hígado, bazo o ganglios, infecciones por virus de Epstein-Barr; en algunos, hipopigmentación en ojos y piel y cabello plateado.','Anemia, plaquetopenia, neutropenia; triglicéridos elevados y ferritina muy alta.','Tratar las infecciones y trasplante de médula ósea como tratamiento curativo.','Fiebre persistente con crecimiento de órganos o ganglios: referir de inmediato.'],
+['Defectos de fagocitos','Neutropenia congénita grave o cíclica, enfermedad granulomatosa crónica (EGC), déficit de adhesión leucocitaria, defecto del eje IL-12/IFN-γ.','Inicio en los primeros meses. Neutropenia cíclica: cada ~21 días, úlceras orales y encías inflamadas. EGC: abscesos, granulomas, BCGitis, neumonía por Aspergillus o S. aureus. Adhesión leucocitaria: caída del cordón después de 15 días, heridas sin pus, mala cicatrización. IL-12/IFN-γ: micobacterias y BCG diseminada.','Biometría con cuenta de neutrófilos; pruebas funcionales en centros especializados.','Profilaxis antibiótica y antimicótica, G-CSF, interferón gamma; trasplante en las formas graves.'],
+['Defectos de la inmunidad innata','Displasia ectodérmica anhidrótica; defectos que predisponen a infecciones virales graves.','Verrugas anormales (VPH), herpes, varicela-zóster y candidiasis extensa en piel o mucosas, con mala respuesta al tratamiento convencional.','Diagnóstico especializado en inmunología.','Lo define el inmunólogo.','Cualquier cuadro como el descrito.'],
+['Trastornos autoinflamatorios','Fiebres periódicas recurrentes.','Fiebre cada 15-30 días sin causa, con dolor articular, dolor abdominal, ganglios crecidos o aftas.','Diagnóstico especializado en inmunología.','Lo define el inmunólogo.','Fiebre recurrente sin causa aparente.'],
+['Deficiencias del complemento','Ausencia de cualquiera de sus componentes.','Neumonía y meningitis graves por neumococo o meningococo; autoinmunidad (lupus, artritis, enfermedad renal).','C3 y C4 y estudios que lo evalúan de forma indirecta; valoración por inmunología.','Antibióticos profilácticos y manejo de la enfermedad autoinmune.']
+],
+s:['Cuatro o más otitis nuevas en un año','Dos o más sinusitis graves en un año','Dos o más meses con antibióticos y poco efecto','Dos o más neumonías en un año','Un bebé que no sube de peso o no crece con normalidad','Abscesos profundos recurrentes en piel u órganos','Candidiasis oral persistente o infección por hongos en la piel','Necesidad de antibióticos intravenosos para controlar infecciones','Dos o más infecciones profundas, incluida sepsis','Antecedente familiar de inmunodeficiencia primaria'],
+f:[
+['Voces de Familias','Testimonios de familias que viven con una IDP.','https://fumeni.org.mx/voces-de-familias/','Fumeni (México)','ES'],
+['Portal Familias','Experiencias, materiales y video cápsulas para mamás y papás.','https://fumeni.org.mx/portal-familias/','Fumeni (México)','ES'],
+['Trasplantes','Información sobre trasplante de médula ósea.','https://fumeni.org.mx/trasplantes/','Fumeni (México)','ES'],
+['Fumeni para Chicos y Chicas','Sitio pensado para niñas y niños.','https://fumeniparachicosychicas.org/','Fumeni (México)','ES'],
+['Contacto Fumeni','Si hay dos o más señales, Fumeni invita a escribir a contacto@fumeni.org.mx.','https://fumeni.org.mx/contacto/','Fumeni (México)','ES'],
+['IDF Friends','Comunidad en línea con foros para compartir historias y resolver dudas.','https://idffriends.org','Immune Deficiency Foundation (EE. UU.)','EN'],
+['Get Connected Groups','Grupos por ubicación, diagnóstico o estilo de vida.','https://primaryimmune.org/living-primary-immunodeficiency/get-support/join-get-connected-group','Immune Deficiency Foundation (EE. UU.)','EN'],
+['Apoyo entre pares','Emparejamiento uno a uno con alguien con experiencia similar.','https://primaryimmune.org/living-primary-immunodeficiency/get-support/peer-support-program','Immune Deficiency Foundation (EE. UU.)','EN'],
+['Grupos virtuales mensuales','Para cuidadores (padres, tutores, abuelos, tíos), parejas y adultos de 18 a 30 años, con una profesional de salud mental. Solo mayores de 18; horarios en zonas de EE. UU.','https://primaryimmune.org/living-primary-immunodeficiency/get-support','Immune Deficiency Foundation (EE. UU.)','EN'],
+['Ask IDF','Envía una pregunta y la fundación consulta con expertos.','https://community.primaryimmune.org/s/newask?language=en_US','Immune Deficiency Foundation (EE. UU.)','EN'],
+['Recursos en español','Materiales de IDF disponibles en español.','https://primaryimmune.org/resources?keyword=&topics=All&your_situation=All&diagnosis=All&language=74','Immune Deficiency Foundation (EE. UU.)','ES']
+],
+r:[
+['Abordaje: biblioteca clínica','Clasificación IUIS 2021, laboratorio, diagnóstico diferencial, autoinmunidad, cáncer en IDP y tamizaje para no inmunólogos.','https://fumeni.org.mx/abordaje/','Fumeni (México)','EN'],
+['Cursos y talleres','Formación para profesionales de la salud.','https://fumeni.org.mx/portal-medico-2/cursos-y-talleres/','Fumeni (México)','ES'],
+['Encuentra un inmunólogo','Directorio de Fumeni.','https://fumeni.org.mx/encuentra-un-inmunologo/','Fumeni (México)','ES'],
+['Tipos de IDP','Una ficha por cada tipo de inmunodeficiencia.','https://primaryimmune.org/understanding-primary-immunodeficiency/types-of-pi','Immune Deficiency Foundation (EE. UU.)','EN'],
+['Autoevaluación','Cuestionario para explorar si los síntomas podrían apuntar a una IDP.','https://go.primaryimmune.org/immune-system','Immune Deficiency Foundation (EE. UU.)','EN'],
+['Buscador de especialistas','Listado voluntario, no verificado, que no es una referencia.','https://primaryimmune.org/find-pi-specialist','Immune Deficiency Foundation (EE. UU.)','EN'],
+['10 señales de alerta','Versión pediátrica y para adultos; carteles en más de 50 idiomas.','https://www.info4pi.org/information-booth/10-warning-signs/','Jeffrey Modell Foundation','Varios'],
+['Encuentra un experto','Directorio de inmunólogos.','https://www.info4pi.org/information-booth/experts/','Jeffrey Modell Foundation','EN'],
+['Red de Centros Jeffrey Modell','Centros especializados en IDP.','https://www.info4pi.org/medical/jmcn/','Jeffrey Modell Foundation','EN'],
+['Roots & Wings','Apoyo de viaje para que pacientes accedan a tratamiento.','https://www.info4pi.org/airport/roots-and-wings/','Jeffrey Modell Foundation','EN'],
+['WinMD Grant','Beca de viaje educativa para congresos de IDP. Revisa los criterios en la fuente.','https://www.info4pi.org/airport/winmd/','Jeffrey Modell Foundation','EN'],
+['WinRN Grant','Beca de viaje educativa para congresos de IDP. Revisa los criterios en la fuente.','https://www.info4pi.org/airport/winrn/','Jeffrey Modell Foundation','EN'],
+['Conferencias','Congresos internacionales de inmunología e IDP.','https://www.info4pi.org/airport/conferences/','Jeffrey Modell Foundation','EN'],
+['Organizaciones de pacientes','Directorio de organizaciones en el mundo.','https://www.info4pi.org/village/patient-organizations/','Jeffrey Modell Foundation','EN'],
+['Be the Match México','Donación de médula ósea.','http://bethematch.org.mx/','Aliados enlazados por Fumeni','ES'],
+['Fundación FIP','Aliado enlazado por Fumeni.','http://fundacion-fip.org/','Aliados enlazados por Fumeni','ES'],
+['LASID','Sociedad Latinoamericana de Inmunodeficiencias.','https://lasid.org/homepage/','Aliados enlazados por Fumeni','ES']
+]};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const T=[['inicio','Inicio',''],['senales','Señales de alerta','m e f'],['tipos','Tipos','m e f'],['diagnostico','Diagnóstico','m e f'],['tratamiento','Tratamiento','m e f'],['estudio','Estudio y glosario','e'],['familias','Familias','f'],['recursos','Recursos','m']];
+const P={medico:'m',estudiante:'e',familia:'f'};
+$('#nv').innerHTML=T.map(([i,l,a])=>`<a href="#${i}"${a?` data-a="${a}"`:''}>${l}</a>`).join('');
+function show(k){let i=location.hash.slice(1);if(!T.some(x=>x[0]==i))i=$$('.tab').find(s=>!s.hidden)?.id.slice(2)||'inicio';
+const a=T.find(x=>x[0]==i)[2];if(a&&!a.split(' ').includes(P[document.body.dataset.p]))i='inicio';
+$$('.tab').forEach(s=>s.hidden=s.id!='t-'+i);
+$$('#nv a').forEach(a=>{const on=a.hash=='#'+i;a.setAttribute('aria-current',on?'page':'false');if(on)a.scrollIntoView({inline:'center',block:'nearest'})});
+if(!k)scrollTo(0,0)}
+addEventListener('hashchange',()=>show());show(1);
+const Q={medico:[['senales','Banderas clínicas'],['tipos','Buscar por hallazgo'],['diagnostico','Ruta diagnóstica']],estudiante:[['estudio','Glosario y repaso'],['tipos','Estudiar los 8 grupos'],['diagnostico','Ruta diagnóstica']],familia:[['senales','Revisar las 10 señales'],['familias','Encontrar apoyo'],['tratamiento','Entender el tratamiento']]};
+function setP(p){document.body.dataset.p=p;$$('.pf button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.p==p));$('#ql').innerHTML=Q[p].map(([i,l])=>`<a class="btn" href="#${i}">${l}</a>`).join('');try{localStorage.setItem('idp-p',p)}catch(e){}show(1)}
+$$('.pf button').forEach(b=>b.onclick=()=>setP(b.dataset.p));
+try{const p=localStorage.getItem('idp-p');if(Q[p])setP(p)}catch(e){}
+$('#gz').innerHTML='<i></i>'.repeat(10);
+$('#ck').innerHTML=D.s.map((s,i)=>`<label><input type="checkbox" value="${i}"><span>${s}</span></label>`).join('');
+function upd(){const c=$$('#ck input:checked'),n=c.length;$('#gz').className=n>1?'gz hit':'gz';$$('#gz i').forEach((e,i)=>e.classList.toggle('on',i<n));
+$('#rs').innerHTML=`<b>${n} de 10 señales marcadas.</b> `+(n>1?'Es recomendable consultar con un inmunólogo: el criterio es de dos o más señales. Esto no es un diagnóstico.':'El criterio para consultar es de dos o más señales. Si tienes dudas, coméntalas con tu médico.')+(n?'<ul>'+c.map(x=>`<li>${D.s[x.value]}</li>`).join('')+'</ul>':'')}
+$('#ck').onchange=upd;upd();
+$('#lt').innerHTML=D.t.map(t=>`<details><summary>${t[0]}</summary><div class="b"><p><b>Ejemplos:</b> ${t[1]}</p><p><b>Qué puede notarse:</b> ${t[2]}</p><p data-a="m e"><b>Estudios iniciales:</b> ${t[3]}</p><p data-a="m e"><b>Tratamiento:</b> ${t[4]}</p>${t[5]?`<p class="rf" data-a="m"><b>Referir cuando:</b> ${t[5]}</p>`:''}</div></details>`).join('');
+$('#q').oninput=e=>{const q=e.target.value.trim().toLowerCase();let k=0;$$('#lt details').forEach(d=>{const m=!q||d.textContent.toLowerCase().includes(q);d.hidden=!m;d.open=!!q&&m;k+=m});$('#qc').textContent=q?`${k} de ${D.t.length} grupos coinciden`:''};
+function list(el,a){const g={};a.forEach(x=>(g[x[3]]=g[x[3]]||[]).push(x));$(el).innerHTML=Object.entries(g).map(([s,v])=>`<h3>${s}</h3>`+v.map(x=>`<a class="r" href="${x[2]}" target="_blank" rel="noopener noreferrer"><b>${x[0]}</b><em class="l">${x[4]}</em><span>${x[1]}</span></a>`).join('')).join('')}
+list('#cf',D.f);list('#cr',D.r);
+const G=[['IDP / EII','Defectos genéticos del sistema inmune que causan infecciones frecuentes o graves y, en ocasiones, autoinmunidad o cáncer. Hay más de 550 descritas.'],['IDCG','Inmunodeficiencia combinada grave. Fallan los linfocitos T y, con frecuencia, los B. Da infecciones graves desde las primeras semanas; ~1 de 80,000 nacimientos.'],['DiGeorge','Cardiopatía, hipocalcemia con convulsiones, paladar hendido y timo pequeño o ausente, con pocos linfocitos T. Se asocia a la deleción 22q11.2.'],['Ataxia-telangiectasia','Marcha atáxica, telangiectasias, alfafetoproteína alta después de los 2 años, IgA e IgG bajas, radiosensibilidad y riesgo de cáncer.'],['Wiskott-Aldrich','Ligado al X: eccema, sangrado por plaquetas bajas y pequeñas, IgM baja, IgA e IgE altas e infecciones.'],['Hiper IgE','Eccema grave, neumonías y abscesos con IgE muy elevada.'],['Bruton','Agammaglobulinemia ligada al X: varones con infecciones sinopulmonares y diarrea después de los 6-8 meses, cuando bajan los anticuerpos maternos.'],['IDCV','Inmunodeficiencia común variable. Anticuerpos bajos y mala respuesta a vacunas, en niños y adultos, con riesgo de autoinmunidad y cáncer.'],['IgA selectiva','IgA baja con IgG e IgM normales. La más frecuente (~1 de 500); suele no dar síntomas.'],['Hipogammaglobulinemia transitoria de la infancia','Inmunoglobulinas bajas en lactantes que se normalizan con el tiempo.'],['Deficiencia específica de anticuerpos','Inmunoglobulinas normales, pero respuesta no protectora a antígenos de polisacáridos (p. ej. neumococo 23-valente).'],['EGC','Enfermedad granulomatosa crónica. Los fagocitos no destruyen ciertos microorganismos: abscesos, granulomas, Aspergillus y S. aureus.'],['BCGitis','Infección local o diseminada por la vacuna BCG en un niño con inmunodeficiencia (EGC o defecto del eje IL-12/IFN-γ).'],['Eje IL-12/IFN-γ','Vía que activa a los macrófagos contra micobacterias. Si falla: micobacterias y BCG diseminada.'],['Adhesión leucocitaria','Los neutrófilos no llegan al sitio de infección: caída del cordón después de 15 días, heridas sin pus y neutrofilia.'],['Neutropenia cíclica','Neutrófilos bajos en episodios cada ~21 días, con úlceras orales y encías inflamadas.'],['Disregulación inmune','Activación inmune excesiva: fiebre, crecimiento de hígado, bazo y ganglios, citopenias, triglicéridos y ferritina altos.'],['Autoinflamatorio','Inflamación sin infección, con fiebre recurrente cada 15-30 días, aftas y dolor articular o abdominal.'],['C3 y C4','Proteínas del complemento. Su déficit predispone a infecciones por neumococo y meningococo.'],['Subpoblaciones linfocitarias','Conteo de linfocitos T, B y NK por citometría de flujo.'],['Oportunista','Microorganismo que causa enfermedad grave sobre todo con inmunodeficiencia (Pneumocystis, Candida).'],['IgIV / IgSC','Inmunoglobulina intravenosa o subcutánea de donadores sanos, para quienes no producen anticuerpos funcionales.'],['TCPH','Trasplante de progenitores hematopoyéticos (médula ósea o células madre). Tratamiento curativo en formas graves.'],['G-CSF','Factor estimulante de colonias de granulocitos: sube los neutrófilos en las neutropenias.'],['Terapia génica','Corrige el defecto genético en las células del paciente; en ensayos clínicos para varias IDP, sin necesidad de donador.'],['Hemoderivados irradiados','Se usan en IDCG para evitar la enfermedad de injerto contra huésped por transfusión.'],['IUIS','Unión Internacional de Sociedades de Inmunología: publica la clasificación internacional de las IDP.']];
+$('#ge').innerHTML=G.map(g=>`<div class="g"><dt>${g[0]}</dt><dd>${g[1]}</dd></div>`).join('');
+$('#gq').oninput=e=>{const q=e.target.value.trim().toLowerCase();$$('#ge .g').forEach(d=>d.hidden=!!q&&!d.textContent.toLowerCase().includes(q))};
+const R=document.documentElement;let fs=100;
+function save(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+try{const t=localStorage.getItem('idp-th');if(t)R.dataset.theme=t;fs=+localStorage.getItem('idp-fs')||100;R.style.fontSize=fs+'%'}catch(e){}
+$('#fm').onclick=()=>{fs=Math.max(85,fs-10);R.style.fontSize=fs+'%';save('idp-fs',fs)};
+$('#fp').onclick=()=>{fs=Math.min(150,fs+10);R.style.fontSize=fs+'%';save('idp-fs',fs)};
+$('#th').onclick=()=>{const d=R.dataset.theme?R.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;R.dataset.theme=d?'light':'dark';save('idp-th',R.dataset.theme)};
+</script>
+</body>
+</html>
